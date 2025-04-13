@@ -1,5 +1,7 @@
 # My NixOS Flake
 
+**TODO: FIX PASSWORD AUTH BEFORE SETTING UP DESKTOP**
+
 <div align="center">
     <img src="https://img.shields.io/badge/Uses-Flake-4c72bb?style=for-the-badge&logo=nixos" alt="NixOS" />
     <img src="https://img.shields.io/badge/Desktop-Hyprland-00c0e5?style=for-the-badge&logo=hyprland" alt="Hyprland" />
@@ -50,6 +52,53 @@ After restructuring my config over and over again, I came up with the following 
 │   └── sops secret files
 ├── wallpapers
 │   └── wallpapers used by desktop hosts
+```
+
+## Getting started
+
+### For servers
+
+To set up this config on your server make sure that the ssh key of the machine you use to connect to your server is added to `~/.ssh/authorized_keys`
+
+Install NixOS
+
+```basj
+curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | NIX_CHANNEL=nixos-24.11 bash -x
+```
+
+Clone this repository.
+
+```bash
+git clone https://github.com/DasPoet/nichts.git
+```
+
+and rebuild your system.
+
+```bash
+cd nichts
+nixos-rebuild switch --flake .#vps
+```
+
+Open a new ssh session to your server
+
+```bash
+ssh daspoet@<your-vps-ip>
+```
+
+Then, copy the NixOS config to the users home directory and make it accessible.
+
+```bash
+sudo mv /root/nichts ~/
+sudo chown -R daspoet:users ~/nichts
+```
+
+Copy your age key to `~/.config/sops/age/keys.txt`
+
+Finally, rebuild your system.
+
+```bash
+cd ~/nichts
+sudo just switch vps
 ```
 
 ## Credits
