@@ -3,7 +3,6 @@
 {
   imports = [
     ./browsers.nix
-    ./nyxt.nix
     ./terminals.nix
     ./vesktop.nix
   ];

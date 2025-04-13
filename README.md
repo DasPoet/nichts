@@ -62,3 +62,5 @@ This configuration takes advantage of some other repositories and projects, incl
 - [wallpapers](./wallpapers/README.md)
 - [Vimjoyer's Discord community](https://www.youtube.com/@vimjoyer)
 
+It is inspired by the great [lukasl-dev/nixos](https://github.com/lukasl-dev/nixos).
+

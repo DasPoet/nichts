@@ -5,10 +5,7 @@
     local = {
       initialize = true;
       repository = "/var/backup/restic/local";
-      paths = [
-        "/var/lib/vaultwarden"
-        "/var/lib/nextcloud"
-      ];
+      paths = []; # TODO
       passwordFile = config.sops.secrets."restic/secret".path;
     };
   };

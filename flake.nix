@@ -1,5 +1,5 @@
 {
-  description = "lukasl-dev";
+  description = "daspoet";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -49,17 +49,17 @@
       system = "x86_64-linux";
 
       meta = {
-        dir = "/home/lukas/nixos";
+        dir = "/home/daspoet/nixos";
         user = {
-          name = "lukas";
-          fullName = "Lukas Leeb";
+          name = "daspoet";
+          fullName = "Das Poet";
         };
-        domain = "lukasl.dev";
+        domain = "daspoet.dev";
         git = {
-          username = "lukasl-dev";
+          username = "daspoet";
         };
         time = {
-          zone = "Europe/Vienna";
+          zone = "Europe/Berlin";
         };
         cuda = false;
       };
@@ -92,7 +92,7 @@
     in
     {
       nixosConfigurations = {
-        vega = nixosSystem ./hosts/desktops/vega {
+        desktop = nixosSystem ./hosts/desktops/vega {
           cuda = true;
           hypr = {
             monitors = [
@@ -102,15 +102,7 @@
           };
         };
 
-        orion = nixosSystem ./hosts/desktops/orion {
-          hypr = {
-            monitors = [ "eDP-1, 1920x1080@144.02800, 0x0, 1" ];
-          };
-        };
-
-        sirius = nixosSystem ./hosts/servers/sirius { };
-
-        pollux = nixosSystem ./hosts/servers/pollux { };
+        vps = nixosSystem ./hosts/servers/vps { };
       };
     };
 }
