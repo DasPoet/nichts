@@ -10,7 +10,7 @@
 This is my personal [NixOS](https://nixos.org/) configuration for my desktops and servers.
 
 > [!IMPORTANT]
-> I do not recommend anyone to use it since it is heavily personalised to my needs. However, the reason I share this repository is to simplify my deployments and allow others, especially new NixOS users, to explore different config structures to choose the best of all worlds.
+> I do not recommend anyone to use it since it is heavily personalised to my needs. However, the reason I share this repository is to simplify my deployment workflow and to allow others, especially new NixOS users, to explore different config structures.
 
 ![Preview](./docs/preview.png)
 
@@ -21,7 +21,7 @@ After restructuring my config over and over again, I came up with the following 
 ```
 .
 ├── docs
-│   └── documentation-related files, e.g. screenshots, ...
+│   └── files related to, e.g. screenshots, ...
 ├── dots
 │   └── dotfiles, e.g. Neovim, ghostty, ...
 ├── home
@@ -38,8 +38,8 @@ After restructuring my config over and over again, I came up with the following 
 │   │   │   └── NixOS config for the Vega desktop host
 │   │   └── shared config for all desktop hosts
 │   ├── servers
-│   │   ├── pollux
-│   │   │   └── NixOS config for the Pollux server host
+│   │   ├── vps
+│   │   │   └── NixOS config for my personal vps
 │   │   └── shared config for all server hosts
 │   └── shared config for both desktop and server hosts
 ├── modules
