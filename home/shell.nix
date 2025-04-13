@@ -20,7 +20,9 @@ let
     gpu = "git push";
 
     cat = "bat";
+
     cls = "clear";
+    md  = "mkdir";
 
     bye = "shutdown -h now";
     cya = "reboot";
