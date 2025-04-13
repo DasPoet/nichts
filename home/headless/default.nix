@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   imports = [ ../default.nix ];
@@ -7,4 +7,8 @@
     enable = true;
     package = pkgs-unstable.go_1_24;
   };
+
+  home.packages = [
+    pkgs.openssl
+  ];
 }
