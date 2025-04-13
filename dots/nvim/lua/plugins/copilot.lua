@@ -1,11 +1,5 @@
-return {
-  "zbirenbaum/copilot.lua",
-
-  cmd = "Copilot",
-  event = "InsertEnter",
-  opts = {
-    -- suggestion = {
-    --   enabled = falsw,
-    -- },
-  },
-}
+return {}
+-- return {
+--     "github/copilot.vim",
+--     event = "InsertEnter",
+-- }

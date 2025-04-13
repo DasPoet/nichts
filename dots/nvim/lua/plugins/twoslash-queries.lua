@@ -1,4 +1,4 @@
 return {
-  "marilari88/twoslash-queries.nvim",
-  event = "BufRead",
+    "marilari88/twoslash-queries.nvim",
+    event = "BufRead",
 }

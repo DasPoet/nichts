@@ -1,50 +1,27 @@
-local function is_available(bufnr, formatter)
-  return require("conform").get_formatter_info(formatter, bufnr).available
-end
-
-local function javascript(bufnr)
-  if is_available(bufnr, "biome") then
-    return { "biome" }
-  end
-  return { "prettier", "eslint" }
-end
-
 return {
-  "stevearc/conform.nvim",
+    'stevearc/conform.nvim',
+    event = "BufWritePre",
+    opts = {
+        formatters_by_ft = {
+            lua = { "stylua" },
+            go = { "gofmt" },
+            markdown = { "mdformat" },
+            python = { "ruff_format", "isort", "black" },
+            typescript = { "biome", "eslint", "prettier" },
+            typescriptreact = { "biome", "eslint", "prettier" },
+            javascript = { "biome", "eslint", "prettier" },
+            javascriptreact = { "biome", "eslint", "prettier" },
+            zig = { "zigfmt" },
+        },
 
-  event = "BufWritePre",
+        format_on_save = function(bufnr)
+            local filetype = vim.bo[bufnr].filetype
 
-  opts = {
-    formatters_by_ft = {
-      lua = { "stylua" },
-      go = function(bufnr)
-        if is_available(bufnr, "gofumpt") then
-          return { "goimports", "gofumpt" }
-        end
-        return { "goimports", "gofmt" }
-      end,
-      markdown = { "prettier" },
-      python = function(bufnr)
-        if is_available(bufnr, "ruff_format") then
-          return { "ruff_format" }
-        end
-        return { "isort", "black" }
-      end,
-      typescript = javascript,
-      typescriptreact = javascript,
-      javascript = javascript,
-      javascriptreact = javascript,
-      zig = { "zigfmt" },
-      nix = { "nixfmt" },
-      just = { "just" },
-      rust = { "rustfmt", lsp_format = "fallback" },
-      ocaml = { "ocamlformat", lsp_format = "fallback" },
-      html = { "prettier" },
+            if filetype == "java" then
+                return false
+            end
+
+            return { timeout_ms = 2500, lsp_fallback = true }
+        end,
     },
-
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_fallback = true,
-    },
-  },
 }
