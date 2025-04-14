@@ -17,8 +17,15 @@
     inputs.nixos-wsl.nixosModules.wsl
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = meta.user.name;
+  wsl = {
+    enable = true;
+
+    wslConf.interop.appendWindowsPath = false;
+    wslConf.network.generateHosts = false;
+    wslConf.network.generateResolvConf = false;
+
+    defaultUser = meta.user.name;
+  };
 
   networking.domain = "nodes.${meta.domain}";
 
