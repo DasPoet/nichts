@@ -36,6 +36,9 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     ghostty.url = "github:ghostty-org/ghostty";
+
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -103,6 +106,7 @@
         };
 
         vps = nixosSystem ./hosts/servers/vps { };
+        wsl = nixosSystem ./hosts/wsl { };
       };
     };
 }
