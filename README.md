@@ -101,6 +101,14 @@ cd ~/nichts
 sudo just switch vps
 ```
 
+### For WSL
+
+### Fixing `lazy not found`
+
+```bash
+rm -rf ~/.local/share/nvim/lazy/
+```
+
 ## Credits
 
 This configuration takes advantage of some other repositories and projects, including:
