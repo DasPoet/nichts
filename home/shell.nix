@@ -72,22 +72,34 @@ in
 
       extraConfig = {
         color.ui = true;
+
         core.editor = "${pkgs.neovim}/bin/nvim";
+
         github.user = username;
+
         push.autoSetupRemote = true;
         pull.rebase = true;
+
         safe.directory = "/nixos";
+
         url = {
           "ssh://git@github.com/" = {
             insteadOf = "https://github.com/";
           };
         };
+
         merge.tool = "nvimdiff";
         mergetool = {
           nvimdiff.cmd = "nvim -d \$LOCAL \$REMOTE \$BASE \$MERGED";
           keepBackup = false;
         };
+
         credential = if (lib.hasAttr "credential" meta.git) then meta.git.credential else {};
+
+        # commit signing
+        commit.gpgsign = true;
+        gpg.format = "ssh";
+        user.signingkey = "~/.ssh/id_ed25519.pub";
       };
 
       aliases = {
