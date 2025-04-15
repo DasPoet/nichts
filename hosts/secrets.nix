@@ -12,5 +12,7 @@
     };
 
     "restic/secret" = { };
+
+    "soptim_gitlab/token" = { };
   };
 }

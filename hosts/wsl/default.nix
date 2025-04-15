@@ -12,6 +12,7 @@
     ../default.nix
 
     ./dns.nix
+    ./gitlab.nix
 
     # include NixOS-WSL modules
     inputs.nixos-wsl.nixosModules.wsl
