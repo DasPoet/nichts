@@ -121,9 +121,6 @@ in
       bind -r k select-pane -U
       bind -r l select-pane -R
 
-      set -g default-terminal "alacritty" 
-      set-option -sa terminal-overrides ",alacritty*:Tc" 
-
       set -g base-index 1
       set -g pane-base-index 1
       set-window-option -g pane-base-index 1
@@ -132,6 +129,9 @@ in
       set -g allow-passthrough all
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
+
+      set -g default-terminal "tmux-256color"
+      set-option -sa terminal-overrides ",xterm-256color:RGB"
     '';
   };
 
