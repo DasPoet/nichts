@@ -106,7 +106,17 @@
         };
 
         vps = nixosSystem ./hosts/servers/vps { };
-        wsl = nixosSystem ./hosts/wsl { };
+        wsl = nixosSystem ./hosts/wsl {
+          git = {
+            username = "Erkens, Cedric";
+            userEmail = "cedric.erkens@soptim.de";
+            credential = {
+              "https://git-ac.soptim.net" = {
+                provider = "generic";
+              };
+            };
+          };
+        };
       };
     };
 }

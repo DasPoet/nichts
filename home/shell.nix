@@ -1,4 +1,4 @@
-{ meta, pkgs, ... }:
+{ meta, lib, pkgs, ... }:
 
 let
   shellAliases = {
@@ -65,7 +65,7 @@ in
     {
       enable = true;
 
-      userEmail = "git@${meta.domain}";
+      userEmail = meta.git.userEmail;
       userName = username;
 
       delta.enable = true;
@@ -87,6 +87,7 @@ in
           nvimdiff.cmd = "nvim -d \$LOCAL \$REMOTE \$BASE \$MERGED";
           keepBackup = false;
         };
+        credential = if (lib.hasAttr "credential" meta.git) then meta.git.credential else {};
       };
 
       aliases = {
