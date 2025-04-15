@@ -10,5 +10,12 @@
 
   home.packages = [
     pkgs.openssl
+
+    # Python
+    pkgs.python3
+    pkgs.uv
+    pkgs.python312Packages.grip
+    pkgs.python312Packages.pylatexenc
+    pkgs.python312Packages.debugpy
   ];
 }
