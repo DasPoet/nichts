@@ -14,5 +14,6 @@
     "restic/secret" = { };
 
     "soptim_gitlab/token" = { };
+    "soptim_artifactory/token" = { };
   };
 }

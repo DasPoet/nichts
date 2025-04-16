@@ -22,10 +22,4 @@
     pkgs.awscli
     pkgs.ssm-session-manager-plugin
   ];
-
-  home.file.".config/uv" = {
-    enable = true;
-    source = ../../dots/uv;
-    target = ".config/uv";
-  };
 }

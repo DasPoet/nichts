@@ -13,6 +13,7 @@
 
     ./dns.nix
     ./gitlab.nix
+    ./artifactory.nix
 
     # include NixOS-WSL modules
     inputs.nixos-wsl.nixosModules.wsl
