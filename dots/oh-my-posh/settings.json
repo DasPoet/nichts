@@ -12,6 +12,13 @@
             "alignment": "left",
             "segments": [
                 {
+                    "type": "nix-shell",
+                    "style": "powerline",
+                    "foreground": "blue",
+                    "background": "transparent",
+                    "template": "(nix-{{ .Type }}) "
+                },
+                {
                     "foreground": "p:os",
                     "style": "plain",
                     "template": "{{.Icon}} ",
