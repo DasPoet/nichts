@@ -19,6 +19,13 @@
                     "template": "(nix-{{ .Type }}) "
                 },
                 {
+                    "type": "python",
+                    "style": "powerline",
+                    "foreground": "yellow",
+                    "background": "transparent",
+                    "template": " {{ .Venv }} "
+                },
+                {
                     "foreground": "p:os",
                     "style": "plain",
                     "template": "{{.Icon}} ",
