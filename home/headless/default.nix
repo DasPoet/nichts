@@ -21,5 +21,11 @@
     # AWS
     pkgs.awscli
     pkgs.ssm-session-manager-plugin
+
+    # Terraform
+    pkgs.terraform
+
+    # Protobuf
+    pkgs.buf
   ];
 }
