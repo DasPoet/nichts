@@ -34,14 +34,14 @@ has system:
 [group('systems')]
 require system:
     @if ! echo '{{ available_systems }}' | jq --exit-status --arg system "{{ system }}" 'index($system)' > /dev/null; then \
-       echo "System {{ system }} not found. Use 'just systems' to list available systems."; \
+       echo "System {{ system }} not found. Use 'just list' to list available systems."; \
        exit 1; \
     fi
 
 [group('systems')]
 switch system:
     @if ! echo '{{ available_systems }}' | jq --exit-status --arg system "{{ system }}" 'index($system)' > /dev/null; then \
-         echo "System {{ system }} not found. Use 'just systems' to list available systems."; \
+         echo "System {{ system }} not found. Use 'just list' to list available systems."; \
          exit 1; \
     fi
     nixos-rebuild switch --flake .#{{ system }}
@@ -49,7 +49,7 @@ switch system:
 [group('systems')]
 build system:
     @if ! echo '{{ available_systems }}' | jq --exit-status --arg system "{{ system }}" 'index($system)' > /dev/null; then \
-         echo "System {{ system }} not found. Use 'just systems' to list available systems."; \
+         echo "System {{ system }} not found. Use 'just list' to list available systems."; \
          exit 1; \
     fi
     nixos-rebuild build --flake .#{{ system }}
