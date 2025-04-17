@@ -103,9 +103,19 @@
               "HDMI-A-1, 1920x1080@74.973, 1920x0, 1"
             ];
           };
+
+          git = {
+            username = "Daspoet";
+            userEmail = "cederk2306@gmail.com";
+          };
         };
 
-        vps = nixosSystem ./hosts/servers/vps { };
+        vps = nixosSystem ./hosts/servers/vps {
+          git = {
+            username = "Daspoet";
+            userEmail = "cederk2306@gmail.com";
+          };
+        };
 
         desktop-wsl = nixosSystem ./hosts/desktop-wsl {
           git = {

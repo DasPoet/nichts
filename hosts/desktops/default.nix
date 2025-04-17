@@ -13,7 +13,6 @@
 
     ../../modules/apps/localsend.nix
     ../../modules/apps/nautilus.nix
-    ../../modules/apps/onepassword.nix
     ../../modules/apps/seahorse.nix
     ../../modules/apps/uxplay.nix
     ../../modules/apps/wireshark.nix
