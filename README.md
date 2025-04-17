@@ -105,6 +105,14 @@ sudo just switch vps
 
 ### Fixing `lazy not found`
 
+First, try cloning the `LazyVim/starter` project.
+
+```bash
+git clone https://github.com/LazyVim/starter
+```
+
+If asked to add github.com to the list of known hosts, say *yes*. Afterwards, delete the local copy of the repository and try again. If that doesn't help, try removing local caches of lazy.
+
 ```bash
 rm -rf ~/.local/share/nvim/lazy/
 ```
