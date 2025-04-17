@@ -27,5 +27,8 @@
 
     # Protobuf
     pkgs.buf
+
+    # Go
+    pkgs.golangci-lint
   ];
 }
