@@ -30,5 +30,14 @@
 
     # Go
     pkgs.golangci-lint
+
+    # Node + Yarn
+    pkgs.yarn
+    pkgs.nodejs_22
+    pkgs.corepack
+
+    # Java
+    pkgs.zulu21
+    pkgs.maven
   ];
 }
