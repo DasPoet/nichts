@@ -15,7 +15,7 @@
     viAlias = true;
     vimAlias = true;
 
-    extraPackages = with pkgs-unstable; [
+    extraPackages = with pkgs; [
       # Tools
       sqlite
       gcc
