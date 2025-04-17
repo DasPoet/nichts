@@ -106,7 +106,15 @@
         };
 
         vps = nixosSystem ./hosts/servers/vps { };
-        wsl = nixosSystem ./hosts/wsl {
+
+        desktop-wsl = nixosSystem ./hosts/desktop-wsl {
+          git = {
+            username = "Daspoet";
+            userEmail = "cederk2306@gmail.com";
+          };
+        };
+
+        soptim-wsl = nixosSystem ./hosts/soptim-wsl {
           git = {
             username = "Erkens, Cedric";
             userEmail = "cedric.erkens@soptim.de";

@@ -11,10 +11,6 @@
   imports = [
     ../default.nix
 
-    ./dns.nix
-    ./gitlab.nix
-    ./artifactory.nix
-
     # include NixOS-WSL modules
     inputs.nixos-wsl.nixosModules.wsl
   ];
@@ -32,7 +28,7 @@
   networking.domain = "nodes.${meta.domain}";
 
   home-manager.users.${meta.user.name} = lib.mkDefault (
-    import ../../home/headless { inherit inputs pkgs pkgs-unstable; }
+    import ../../home/erke-headless { inherit inputs pkgs pkgs-unstable; }
   );
 
   security.sudo = {
