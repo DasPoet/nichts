@@ -29,8 +29,10 @@ After restructuring my config over and over again, I came up with the following 
 ├── home
 │   ├── desktop
 │   │   └── home-manager config for desktop hosts
-│   ├── headless
-│   │   └── home-manager config for non-desktop hosts, e.g. servers
+│   ├── erke-headless
+│   │   └── home-manager config for headles erke
+│   ├── soptim-headless
+│   │   └── home-manager config for headles soptim
 │   └── shared config for both desktop and headless hosts
 ├── hosts
 │   ├── desktops
@@ -43,6 +45,10 @@ After restructuring my config over and over again, I came up with the following 
 │   │   ├── vps
 │   │   │   └── NixOS config for my personal vps
 │   │   └── shared config for all server hosts
+│   ├── desktop-wsl
+│   │   └── config for my main wsl
+│   ├── soptim-wsl
+│   │   └── config for my soptim wsl
 │   └── shared config for both desktop and server hosts
 ├── modules
 │   └── NixOS modules for various services and apps
