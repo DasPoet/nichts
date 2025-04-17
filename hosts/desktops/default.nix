@@ -12,7 +12,6 @@
     ../default.nix
 
     ../../modules/apps/localsend.nix
-    ../../modules/apps/calcurse.nix
     ../../modules/apps/nautilus.nix
     ../../modules/apps/onepassword.nix
     ../../modules/apps/seahorse.nix
