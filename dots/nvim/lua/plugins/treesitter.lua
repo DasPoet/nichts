@@ -20,19 +20,16 @@ return {
         autotag = { enable = true },
         context_commentstring = { enable = true, enable_autocmd = false },
     },
-    build = ':TSUpdate',
     config = function(_, opts)
         require('nvim-treesitter.configs').setup(opts)
-        vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-            vim.lsp.diagnostic.on_publish_diagnostics,
-            {
-                underline = true,
-                virtual_text = {
-                    spacing = 5,
-                    min = "severity"
-                },
-                update_in_insert = true,
-            }
-        )
+
+        vim.diagnostic.config({
+            underline = true,
+            virtual_text = {
+                spacing = 5,
+                severity_sort = true
+            },
+            update_in_insert = true,
+        })
     end
 }
