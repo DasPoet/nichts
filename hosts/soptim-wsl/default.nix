@@ -15,6 +15,10 @@
     ./gitlab.nix
     ./artifactory.nix
 
+    ./certs.nix
+
+    ./zrs.nix
+
     # include NixOS-WSL modules
     inputs.nixos-wsl.nixosModules.wsl
   ];

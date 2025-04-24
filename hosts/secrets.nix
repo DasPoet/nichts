@@ -15,5 +15,7 @@
 
     "soptim_gitlab/token" = { };
     "soptim_artifactory/token" = { };
+
+    "zrs/dev_api_key" = { };
   };
 }
