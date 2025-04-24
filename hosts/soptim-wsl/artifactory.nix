@@ -188,6 +188,21 @@
     ''; 
   };
 
+  sops.templates.".docker/config.json" = {
+    path = "/home/${meta.user.name}/.docker/config.json";
+    owner = meta.user.name;
+    content = ''
+      {
+          "auths": {
+              "https://docker-debian.artifactory.soptim.net:443" : {
+                  "auth": "${config.sops.placeholder."soptim_artifactory/token"}",
+                  "email": "cedric.erkens@soptim.de"
+              }
+          }
+      }
+    ''; 
+  };
+
   sops.templates.".config/uv/uv.toml" = {
     path = "/home/${meta.user.name}/.config/uv/uv.toml";
     owner = meta.user.name;
