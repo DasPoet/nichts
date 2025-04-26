@@ -23,6 +23,9 @@
 
   networking = {
     hostName = "vps";
+    firewall = {
+      allowedTCPPorts = [ 465 ];
+    }; 
   };
 
   # # TODO: configure IPV6
