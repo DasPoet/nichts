@@ -49,6 +49,7 @@ in
     initExtra = ''
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       bindkey "''${key[Up]}" up-line-or-search
+      cd ~/
     '';
   };
 
@@ -56,6 +57,7 @@ in
     enable = true;
 
     shellAliases = shellAliases;
+    bashrcExtra = builtins.readFile ./rc.sh;
   };
 
   programs.git =
